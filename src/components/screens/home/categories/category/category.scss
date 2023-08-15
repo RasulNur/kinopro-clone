@@ -1,0 +1,27 @@
+@import "../../../../../variables.scss";
+
+.category {
+    margin-top: 50px;
+    &__heading-wrapper {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        margin-bottom: 30px;
+    }
+
+    &__heading {
+        position: relative;
+        font-weight: 700;
+        padding: 7px 10px;
+        margin-bottom: 0;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-size: 12px;
+        border-radius: 3px 3px 0 0;
+        border-bottom: 1px solid $color3;
+        background-color: $color3;
+        display: inline-block;
+        margin-top: -7px;
+    }
+
+    &__slider {
+    }
+}

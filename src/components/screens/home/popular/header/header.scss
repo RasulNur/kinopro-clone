@@ -1,0 +1,68 @@
+@import "../../../../../variables.scss";
+
+.popular-header {
+    max-width: 348px;
+    min-width: 283px;
+    padding: 0 15px;
+
+    @media (max-width: 992px) {
+        max-width: 100%;
+        margin-bottom: 30px;
+    }
+    @media (max-width: 575px) {
+        padding: 0;
+    }
+    &__text-wrapper {
+        padding-bottom: 15px;
+        margin-bottom: 20px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    &__heading {
+        font-size: 32px;
+        font-weight: 600;
+        line-height: 1.2em;
+        margin-bottom: 0.5rem;
+        @media (max-width: 992px) {
+            font-size: 26px;
+        }
+        @media (max-width: 575px) {
+            font-size: 22px;
+        }
+    }
+
+    &__subheading {
+        line-height: 1.8em;
+        font-size: 15px;
+        font-weight: 500;
+        color: $color4;
+    }
+
+    &__btns-wrapper {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+    }
+
+    &__btn {
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+        font-size: 15px;
+        background-color: transparent;
+        border: 2px solid rgba(255, 255, 255, 0.1);
+        position: relative;
+        border-radius: 50%;
+        color: #949cb0;
+        display: inline-block;
+        text-align: center;
+        cursor: pointer;
+        transition: all 0.5s;
+        &:hover {
+            @media (min-width: 993px) {
+                background-color: #d50055;
+                color: white;
+            }
+        }
+    }
+}

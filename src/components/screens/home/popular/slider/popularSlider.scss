@@ -1,0 +1,22 @@
+.popular-slider-wrapper {
+    margin: 0 auto;
+}
+
+.popular-slider {
+    max-width: 1156px;
+    min-width: 290px;
+    width: 100%;
+    padding: 0 15px;
+    @media (max-width: 575px) {
+        padding: 0px;
+    }
+
+    img {
+        min-height: 300px;
+        max-height: 300px;
+        @media (max-width: 500px) {
+            min-height: 230px;
+            max-height: 230px;
+        }
+    }
+}

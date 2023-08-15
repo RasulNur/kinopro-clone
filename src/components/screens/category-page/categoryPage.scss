@@ -1,0 +1,106 @@
+@import "../../../variables.scss";
+@import "../../../mixins.scss";
+
+.category-page {
+    &__header {
+        @include header;
+        &::before {
+            @include before;
+        }
+        &::after {
+            @include after;
+        }
+    }
+
+    &__wrapper {
+        @include wrapper;
+    }
+    &__breadcrumb {
+        @include breadcumb;
+    }
+
+    &__heading {
+        @include heading;
+        @media (max-width: 992) {
+            font-size: 24px;
+        }
+    }
+
+    &__link {
+        @include link;
+        svg {
+            width: 15.74px;
+            height: 14px;
+        }
+    }
+
+    &__dash {
+        @include dash;
+    }
+
+    &__span {
+        @include span;
+    }
+
+    &__row {
+        @include row;
+        @media (max-width: 1580px) {
+            grid-template-columns: repeat(5, 233px);
+        }
+        @media (max-width: 1340px) {
+            grid-template-columns: repeat(4, 233px);
+        }
+        @media (max-width: 1150px) {
+            grid-template-columns: repeat(4, 200px);
+        }
+        @media (max-width: 992px) {
+            grid-template-columns: repeat(3, 200px);
+        }
+        @media (max-width: 767px) {
+            grid-template-columns: repeat(2, 233px);
+        }
+
+        img {
+            height: 300px;
+        }
+    }
+
+    &__genres-wrapper {
+        display: flex;
+        gap: 10px 20px;
+        align-items: center;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        margin-bottom: 20px;
+    }
+    .active {
+        color: $color3;
+    }
+
+    &__genre-btn {
+        font-size: 18px;
+        text-transform: uppercase;
+        background-color: transparent;
+        outline: none;
+        color: $color4;
+        transition: all 0.2s;
+
+        &:hover {
+            @media (min-width: 993px) {
+                color: $color3;
+            }
+        }
+    }
+
+    &__loading-row {
+        margin: 0 auto;
+    }
+
+    &__not-found {
+        font-size: 18px;
+        text-align: center;
+        text-transform: uppercase;
+        color: $color4;
+        margin: 50px 0;
+    }
+}

@@ -1,0 +1,16 @@
+@import "../../../../variables.scss";
+
+.popular {
+    background-color: $color6;
+    padding: 1.5rem 0;
+    &__wrapper {
+        display: flex;
+        flex-direction: reverse;
+        justify-content: space-between;
+        align-items: center;
+        gap: 15px;
+        @media (max-width: 992px) {
+            flex-direction: column;
+        }
+    }
+}

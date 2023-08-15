@@ -1,0 +1,17 @@
+@import "../../../variables.scss";
+
+.scroll-top {
+    position: fixed;
+    right: 30px;
+    width: 45px;
+    height: 45px;
+    background: $color3;
+    color: $color2;
+    line-height: 45px;
+    font-size: 20px;
+    text-align: center;
+    border-radius: 50%;
+    z-index: 99;
+    cursor: pointer;
+    transition: all 1s;
+}
