@@ -1,0 +1,120 @@
+@import "../../../variables.scss";
+
+.movie-page {
+    padding-bottom: 80px;
+    @media (max-width: 767px) {
+        padding-bottom: 30px;
+    }
+
+    &__wrapper {
+        max-width: 1054px;
+        margin: 0 auto;
+    }
+
+    &__row {
+        display: flex;
+        justify-content: flex-start;
+        gap: 30px;
+        @media (max-width: 767px) {
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+
+    &__img-wrapper {
+    }
+
+    &__img {
+        width: 315px;
+        height: 470px;
+        @media (max-width: 400px) {
+            width: 90dvw;
+        }
+    }
+
+    &__info {
+    }
+
+    &__movie-name {
+        font-size: 26px;
+        margin-bottom: 15px;
+        font-weight: 600;
+        line-height: 1.2em;
+    }
+
+    &__info-list {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    &__info-item {
+        color: $color4;
+        font-weight: 500;
+        font-size: 15px;
+        line-height: 1.5em;
+        text-transform: capitalize;
+    }
+
+    &__item-title {
+        color: $color2;
+        font-weight: 600;
+        font-size: 15px;
+        line-height: 1.5em;
+    }
+
+    &__age {
+        display: inline;
+        border: 1px solid #949cb0;
+        padding: 3px 5px;
+    }
+
+    &__movie-descr {
+        margin-top: 10px;
+    }
+
+    &__descr-heading {
+        font-size: 20px;
+        font-weight: 600;
+        line-height: 1.2em;
+        margin-bottom: 0.5rem;
+    }
+
+    &__descr-text {
+        font-size: 13px;
+        line-height: 1.8em;
+        color: $color4;
+        font-weight: 500;
+    }
+
+    &__pictures-wrapper {
+        margin-top: 1rem;
+    }
+
+    &__pictures-heading {
+        font-size: 20px;
+        font-weight: 600;
+        line-height: 1.2em;
+        margin-bottom: 0.5rem;
+    }
+
+    &__pictures-list {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 30px;
+        flex-wrap: wrap;
+    }
+
+    &__pictures-iten {
+    }
+
+    &__pictures-image {
+        height: 150px;
+        width: auto;
+    }
+    #ReactSimpleImageViewer {
+        z-index: 3;
+    }
+}

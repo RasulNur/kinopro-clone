@@ -1,7 +1,7 @@
 import { FC } from "react";
 import { useGetGenresQuery } from "../../../../store/api/moviesApi";
 import Category from "./category/Category";
-import Loading from "../../../ui/Loading/Loading";
+import Loading from "../../../ui/loading/Loading";
 
 const Categories: FC = () => {
     const { data, isLoading } = useGetGenresQuery("/v2.2/films/filters");

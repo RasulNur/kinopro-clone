@@ -84,7 +84,11 @@
     &__pay-services-list {
         display: flex;
         align-items: center;
+
         gap: 10px;
+        @media (max-width: 360px) {
+            flex-wrap: wrap;
+        }
     }
 
     &__pay-services-item {

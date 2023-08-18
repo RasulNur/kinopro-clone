@@ -52,9 +52,23 @@ export interface IFilm {
     completed?: boolean;
 }
 
+export interface IStaff {
+    staffId: number;
+    nameRu: string;
+    nameEn: string;
+    description: string;
+    posterUrl: string;
+    professionText: string;
+    professionKey: string;
+}
 interface IGenre {
     genre: string;
 }
 export interface ICountry {
     country: string;
+}
+
+export interface IPicture {
+    imageUrl: string;
+    previewUrl: string;
 }

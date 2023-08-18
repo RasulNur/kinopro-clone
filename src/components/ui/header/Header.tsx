@@ -1,4 +1,4 @@
-import { FC, useEffect, useState } from "react";
+import { FC, useEffect, useRef, useState } from "react";
 import "./header.scss";
 
 import { Link } from "react-router-dom";
@@ -9,7 +9,8 @@ import { setMoviesGenre } from "../../../store/movies/moviesSlice";
 import { useAppDispatch } from "../../../hooks/reduxHooks";
 
 export const Header: FC = () => {
-    const navObj = { 1: "Фильмы", 2: "Сериалы", 3: "ТВ шоу" };
+    const categories = ["Фильмы", "Сериалы", "ТВ шоу"];
+    const headerRef = useRef<HTMLElement>(null);
 
     const [searchIsActive, setSearchIsActive] = useState<boolean>(false);
     const [burgerIsActive, setBurgerIsActive] = useState<boolean>(false);
@@ -29,11 +30,31 @@ export const Header: FC = () => {
         document.body.style.overflowY = "scroll";
     };
 
+    useEffect(() => {
+        const handleClickOutside = (event: MouseEvent) => {
+            if (
+                headerRef.current &&
+                !headerRef.current.contains(event.target as Node)
+            ) {
+                setBurgerIsActive(false);
+            }
+        };
+
+        document.addEventListener("mousedown", handleClickOutside);
+
+        return () => {
+            document.removeEventListener("mousedown", handleClickOutside);
+        };
+    }, [burgerIsActive]);
+
     return (
-        <header className="header">
+        <header className="header" ref={headerRef}>
             <div className="container">
                 <nav className="nav">
-                    <Link to="/" className="nav__branding">
+                    <Link
+                        to="/"
+                        onClick={() => setBurgerIsActive(false)}
+                        className="nav__branding">
                         <img src="/logo.png" alt="Kinopro" />
                     </Link>
                     <div
@@ -41,19 +62,18 @@ export const Header: FC = () => {
                             burgerIsActive ? "active" : ""
                         }`}>
                         <ul className="nav__list">
-                            {Object.values(navObj).map((el, id) => (
+                            {categories.map((el, id) => (
                                 <li
                                     className="nav__item"
                                     onClick={removeActiveClass}
                                     key={id}>
                                     <Link
-                                        to={`/category/${
-                                            Object.keys(navObj)[id]
-                                        }`}
+                                        to={`/category/${id + 1}`}
                                         className="nav__link"
-                                        onClick={() =>
-                                            dispatch(setMoviesGenre(0))
-                                        }>
+                                        onClick={() => {
+                                            dispatch(setMoviesGenre(0));
+                                            window.scrollTo(0, 0);
+                                        }}>
                                         {el}
                                     </Link>
                                 </li>
@@ -87,6 +107,7 @@ export const Header: FC = () => {
                     </div>
 
                     <PopUpSearch
+                        setBurgerIsActive={setBurgerIsActive}
                         searchIsActive={searchIsActive}
                         setSearchIsActive={setSearchIsActive}
                     />

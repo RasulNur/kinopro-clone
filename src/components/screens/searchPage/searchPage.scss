@@ -1,0 +1,15 @@
+@import "../../../variables.scss";
+@import "../../../mixins.scss";
+
+.search-page {
+    padding: 80px 0;
+    &__row {
+        @include row;
+    }
+    &__not-found {
+        font-size: 18px;
+        text-align: center;
+        text-transform: uppercase;
+        color: #949cb0;
+    }
+}

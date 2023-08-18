@@ -11,18 +11,22 @@ import { useNavigate } from "react-router-dom";
 interface ISearchProps {
     searchIsActive: boolean;
     setSearchIsActive: Dispatch<SetStateAction<boolean>>;
+    setBurgerIsActive: Dispatch<SetStateAction<boolean>>;
 }
 
 const PopUpSearch: FC<ISearchProps> = ({
     searchIsActive,
     setSearchIsActive,
+    setBurgerIsActive,
 }) => {
     const [search, setSearch] = useState<string>("");
     const navigate = useNavigate();
 
     const handleSearch = () => {
         setSearchIsActive(false);
+        setBurgerIsActive(false);
         navigate(`/search/${search}`);
+        window.scrollTo(0, 0);
     };
 
     const handleKeyDown: KeyboardEventHandler<HTMLInputElement> = (e) => {

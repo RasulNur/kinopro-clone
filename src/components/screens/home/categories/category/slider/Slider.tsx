@@ -3,18 +3,18 @@ import { Swiper as SliderComponent, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/effect-fade";
-import { MovieCard } from "../../../../../ui/movie-card/MovieCard";
+import { MovieCard } from "../../../../../ui/movieCard/MovieCard";
 
 import "./categorySlider.scss";
-import { useGetGenreMoviesQuery } from "../../../../../../store/api/moviesApi";
-import Loading from "../../../../../ui/Loading/Loading";
+import { useGetMoviesQuery } from "../../../../../../store/api/moviesApi";
+import Loading from "../../../../../ui/loading/Loading";
 
 interface ISliderProps {
     genreId: number;
 }
 
 const Slider: FC<ISliderProps> = ({ genreId }) => {
-    const { data, isLoading, isSuccess } = useGetGenreMoviesQuery(
+    const { data, isLoading, isSuccess } = useGetMoviesQuery(
         `/v2.2/films?genres=${genreId}&order=RATING&type=ALL&ratingFrom=0&ratingTo=10&yearFrom=1000&yearTo=3000&page=1`
     );
 

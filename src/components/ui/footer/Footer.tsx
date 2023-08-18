@@ -1,14 +1,24 @@
 import { FC } from "react";
 import "./footer.scss";
 import { Link } from "react-router-dom";
+import { useAppDispatch } from "../../../hooks/reduxHooks";
+import { setMoviesGenre } from "../../../store/movies/moviesSlice";
 
 export const Footer: FC = () => {
+    const categories = ["Фильмы", "Сериалы", "ТВ шоу"];
+    const dispatch = useAppDispatch();
+
     return (
         <footer className="footer">
             <div className="container">
                 <div className="footer__wrapper">
                     <div className="footer__top">
-                        <Link to="/" className="footer__logo-link">
+                        <Link
+                            to="/"
+                            className="footer__logo-link"
+                            onClick={() => {
+                                window.scrollTo(0, 0);
+                            }}>
                             <img
                                 className="footer__logo-img"
                                 src="/logo.png"
@@ -18,37 +28,34 @@ export const Footer: FC = () => {
 
                         <ul className="footer__pay-services-list">
                             <li className="footer__pay-services-item">
-                                <Link
+                                <img
+                                    src="/pay-services/payme_icon.svg"
+                                    alt="Payme"
+                                    className="footer__pay-service-img"
+                                />
+                                {/* <Link
                                     to="#"
-                                    className="footer__pay-services-link">
-                                    <img
-                                        src="/pay-services/payme_icon.svg"
-                                        alt="Payme"
-                                        className="footer__pay-service-img"
-                                    />
-                                </Link>
+                                    className="footer__pay-services-link"></Link> */}
                             </li>
                             <li className="footer__pay-services-item">
-                                <Link
+                                <img
+                                    src="/pay-services/click_icon.svg"
+                                    alt="Click"
+                                    className="footer__pay-service-img"
+                                />
+                                {/* <Link
                                     to="#"
-                                    className="footer__pay-services-link">
-                                    <img
-                                        src="/pay-services/click_icon.svg"
-                                        alt="Click"
-                                        className="footer__pay-service-img"
-                                    />
-                                </Link>
+                                    className="footer__pay-services-link"></Link> */}
                             </li>
                             <li className="footer__pay-services-item">
-                                <Link
+                                <img
+                                    src="/pay-services/paynet_icon.svg"
+                                    alt="Paynet"
+                                    className="footer__pay-service-img"
+                                />
+                                {/* <Link
                                     to="#"
-                                    className="footer__pay-services-link">
-                                    <img
-                                        src="/pay-services/paynet_icon.svg"
-                                        alt="Paynet"
-                                        className="footer__pay-service-img"
-                                    />
-                                </Link>
+                                    className="footer__pay-services-link"></Link> */}
                             </li>
                         </ul>
                     </div>
@@ -68,27 +75,22 @@ export const Footer: FC = () => {
                             </h3>
 
                             <ul className="footer__categories-list footer-list">
-                                <li className="footer__categories-item">
-                                    <Link
-                                        to="#"
-                                        className="footer__categories-link">
-                                        Фильмы
-                                    </Link>
-                                </li>
-                                <li className="footer__categories-item">
-                                    <Link
-                                        to="#"
-                                        className="footer__categories-link">
-                                        Сериалы
-                                    </Link>
-                                </li>
-                                <li className="footer__categories-item">
-                                    <Link
-                                        to="#"
-                                        className="footer__categories-link">
-                                        ТВ шоу
-                                    </Link>
-                                </li>
+                                {categories.map((el, id) => (
+                                    <li
+                                        className="footer__categories-item"
+                                        // onClick={removeActiveClass}
+                                        key={id}>
+                                        <Link
+                                            to={`/category/${id + 1}`}
+                                            className="footer__categories-link"
+                                            onClick={() => {
+                                                dispatch(setMoviesGenre(0));
+                                                window.scrollTo(0, 0);
+                                            }}>
+                                            {el}
+                                        </Link>
+                                    </li>
+                                ))}
                             </ul>
                         </div>
 
@@ -99,7 +101,12 @@ export const Footer: FC = () => {
 
                             <ul className="footer__links-list footer-list">
                                 <li className="footer__links-item">
-                                    <Link className="footer__links-link" to="">
+                                    <Link
+                                        className="footer__links-link"
+                                        to="/license"
+                                        onClick={() => {
+                                            window.scrollTo(0, 0);
+                                        }}>
                                         Наши лицензии
                                     </Link>
                                 </li>
@@ -144,7 +151,12 @@ export const Footer: FC = () => {
                             ЗАЩИЩЕНЫ. OOO "CLEVER IT MEDIA"
                         </p>
 
-                        <Link to="#" className="footer__bottom-link">
+                        <Link
+                            to="/user-agreement"
+                            className="footer__bottom-link"
+                            onClick={() => {
+                                window.scrollTo(0, 0);
+                            }}>
                             Пользовательское соглашение
                         </Link>
                     </div>

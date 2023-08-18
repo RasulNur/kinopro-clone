@@ -4,13 +4,14 @@ import Home from "./components/screens/home/Home";
 import { Header } from "./components/ui/header/Header";
 import { Footer } from "./components/ui/footer/Footer";
 import ScrollTop from "./components/ui/scrollTop/ScrollTop";
-// import axios from "axios";
-import CategoryPage from "./components/screens/category-page/CategoryPage";
-import SearchPage from "./components/screens/search-page/SearchPage";
+
+import CategoryPage from "./components/screens/categoryPage/CategoryPage";
+import SearchPage from "./components/screens/searchPage/SearchPage";
+import License from "./components/screens/license/License";
+import UserAgreement from "./components/screens/userAgreement/UserAgreement";
+import MoviePage from "./components/screens/moviePage/MoviePage";
 
 const Router: FC = () => {
-    // axios.defaults.baseURL = "https://kinopoiskapiunofficial.tech/api";
-
     return (
         <div>
             <div className="router">
@@ -18,11 +19,16 @@ const Router: FC = () => {
                 <ScrollTop />
                 <Routes>
                     <Route path="/" element={<Home />} />
+                    <Route path="/movie/:movieId" element={<MoviePage />} />
+
                     <Route
                         path="/category/:categoryID"
                         element={<CategoryPage />}
                     />
                     <Route path="/search/:keyword" element={<SearchPage />} />
+
+                    <Route path="/license" element={<License />} />
+                    <Route path="/user-agreement" element={<UserAgreement />} />
 
                     <Route
                         path="*"
