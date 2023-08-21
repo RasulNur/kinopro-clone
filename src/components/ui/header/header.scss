@@ -17,7 +17,6 @@
     align-items: center;
     z-index: 2;
 
-    // @media (max-width: 768px) {
     @media (max-width: 992px) {
         display: flex;
         justify-content: space-between;
@@ -44,7 +43,6 @@
         align-items: center;
         gap: 60px;
 
-        // @media (max-width: 768px) {
         @media (max-width: 992px) {
             position: fixed;
             left: -100%;
@@ -75,7 +73,6 @@
         gap: 30px;
         margin: 0 auto;
 
-        // @media (max-width: 768px) {
         @media (max-width: 992px) {
             flex-direction: column;
             align-items: flex-start;
@@ -85,7 +82,6 @@
     }
 
     &__item {
-        // @media (min-width: 769px) {
         @media (min-width: 993px) {
             &::after {
                 content: "";
@@ -116,7 +112,7 @@
         text-transform: uppercase;
         font-family: "Montserrat", sans-serif;
         transition: all 0.9s;
-        // @media (max-width: 768px) {
+
         @media (max-width: 992px) {
             padding: 12px 0;
             font-size: 18px;
@@ -151,7 +147,6 @@
     }
 
     &__panel-wrpaper {
-        // @media (min-width: 769px) {
         @media (min-width: 993px) {
             margin-left: 20px;
         }
@@ -183,7 +178,6 @@
             height: 16px;
         }
 
-        // @media (min-width: 769px) {
         @media (min-width: 993px) {
             margin-left: 20px;
             margin-top: 0;
@@ -206,19 +200,16 @@
     }
 
     &__right-regular {
-        // @media (max-width: 768px) {
         @media (max-width: 992px) {
-            // .nav__search {
             .nav__search-btn {
                 display: none;
             }
         }
     }
     &__right-adpative {
-        // @media (min-width: 769px) {
         @media (min-width: 993px) {
             display: none;
-            // .nav__search {
+
             .nav__search-btn {
                 display: none;
             }
@@ -228,11 +219,10 @@
     &__hamburger {
         display: none;
         cursor: pointer;
-        // @media (max-width: 768px) {
+
         @media (max-width: 992px) {
             display: block;
 
-            // padding: 0.25rem 0.75rem;
             padding: 0.25rem 0 0.25rem 0.75rem;
 
             font-size: 1.25rem;
@@ -278,7 +268,7 @@
             bottom: -70px;
             height: 70px;
         }
-        // @media (max-width: 768px) {
+
         @media (max-width: 992px) {
             right: 60px;
             width: max-content;

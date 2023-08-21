@@ -1,7 +1,8 @@
-@import "../../../mixins.scss";
+@import "../../../variables.scss";
 
-.heading {
+.dashboard-header {
     padding: 180px 0 80px;
+
     position: relative;
     background-image: url("/header-bg.jpg");
     background-repeat: repeat;
@@ -41,11 +42,9 @@
     &__wrapper {
         position: relative;
         z-index: 1;
-        text-align: center;
-        padding: 0 15px;
     }
 
-    &__caption {
+    &__heading {
         font-size: 35px;
         margin-bottom: 15px;
         font-weight: 700;
@@ -57,37 +56,20 @@
         }
     }
 
-    &__breadcrumb {
+    &__list {
         display: flex;
-        align-items: center;
-        justify-content: center;
+        flex-direction: column;
         gap: 0.5rem;
-        @media (max-width: 400px) {
-            flex-wrap: wrap;
-        }
     }
 
-    &__link {
-        display: inline-flex;
-        align-items: center;
-        gap: 5px;
+    &__list-item {
+        font-size: 20px;
         font-weight: 600;
-        font-size: 14px;
-        color: $color3;
-        svg {
-            width: 15.74px;
-            height: 14px;
-        }
-    }
-
-    &__dash {
-        color: $color3;
-        font-weight: 600;
-        font-size: 14px;
+        line-height: 1.2em;
+        color: $color4;
     }
 
     &__span {
-        font-weight: 600;
-        font-size: 14px;
+        color: $color2;
     }
 }

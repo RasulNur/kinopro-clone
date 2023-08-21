@@ -21,18 +21,12 @@
         }
     }
 
-    &__img-wrapper {
-    }
-
     &__img {
         width: 315px;
         height: 470px;
         @media (max-width: 400px) {
             width: 90dvw;
         }
-    }
-
-    &__info {
     }
 
     &__movie-name {
@@ -105,9 +99,6 @@
         align-items: center;
         gap: 30px;
         flex-wrap: wrap;
-    }
-
-    &__pictures-iten {
     }
 
     &__pictures-image {
