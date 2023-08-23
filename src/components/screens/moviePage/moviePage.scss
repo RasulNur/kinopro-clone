@@ -1,14 +1,13 @@
 @import "../../../variables.scss";
 
 .movie-page {
-    padding-bottom: 80px;
-    @media (max-width: 767px) {
-        padding-bottom: 30px;
-    }
-
     &__wrapper {
         max-width: 1054px;
         margin: 0 auto;
+        padding-bottom: 80px;
+        @media (max-width: 767px) {
+            padding-bottom: 30px;
+        }
     }
 
     &__row {
@@ -60,7 +59,7 @@
 
     &__age {
         display: inline;
-        border: 1px solid #949cb0;
+        border: 1px solid $color4;
         padding: 3px 5px;
     }
 

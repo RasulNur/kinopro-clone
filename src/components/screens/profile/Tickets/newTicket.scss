@@ -1,8 +1,8 @@
 @import "../../../../variables.scss";
 
 @mixin input-style {
-    background-color: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    background-color: $color9;
+    border: 1px solid $color8;
     height: 38px;
     padding: 0 10px;
     color: $color2;
@@ -26,7 +26,7 @@
 
 .ticket {
     &__card {
-        border: 2px solid rgba(255, 255, 255, 0.1);
+        border: 2px solid $color9;
         background-color: transparent;
         border-radius: 0.25rem;
     }

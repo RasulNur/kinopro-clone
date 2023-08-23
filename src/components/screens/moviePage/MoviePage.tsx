@@ -5,28 +5,37 @@ import { useParams } from "react-router-dom";
 import {
     useGetMovieStaffQuery,
     useGetMoviesByIdQuery,
+    useGetMoviesQuery,
     useGetPicturesQuery,
 } from "../../../store/api/moviesApi";
 import { IStaff } from "../../../types/types";
 
 import "./moviePage.scss";
 import Loading from "../../ui/loading/Loading";
+import Similar from "./similar/Similar";
 
 const MoviePage: FC = () => {
-    const { movieId } = useParams();
+    const { movieId } = useParams<string>();
+
+    const [currentImage, setCurrentImage] = useState<number>(0);
+    const [isViewerOpen, setIsViewerOpen] = useState<boolean>(false);
+
+    const { data: movie, isLoading: isMovieLoading } = useGetMoviesByIdQuery(
+        `/v2.2/films/${movieId}`
+    );
+
     const { data: staff } = useGetMovieStaffQuery(
         `/v1/staff?filmId=${movieId}`
     );
-    const [currentImage, setCurrentImage] = useState<number>(0);
-    const [isViewerOpen, setIsViewerOpen] = useState<boolean>(false);
-    const {
-        data: movie,
-        isLoading: isMovieLoading,
-        isSuccess: isMovieSuccess,
-    } = useGetMoviesByIdQuery(`/v2.2/films/${movieId}`);
-
     const { data: pictures } = useGetPicturesQuery(
         `/v2.2/films/${movieId}/images?type=STILL&page=1`
+    );
+    const {
+        data: similarMovies,
+        isLoading: isSimilarLoading,
+        isSuccess: isSimilarSuccess,
+    } = useGetMoviesQuery(
+        `https://kinopoiskapiunofficial.tech/api/v2.2/films/${movieId}/similars`
     );
 
     const openImageViewer = useCallback((index: number) => {
@@ -56,7 +65,7 @@ const MoviePage: FC = () => {
             <div className="container">
                 {isMovieLoading ? (
                     <Loading />
-                ) : isMovieSuccess ? (
+                ) : (
                     <div className="movie-page__wrapper">
                         <div className="movie-page__row">
                             <div className="movie-page__img-wrapper">
@@ -252,8 +261,16 @@ const MoviePage: FC = () => {
                             </div>
                         ) : null}
                     </div>
-                ) : null}
+                )}
             </div>
+
+            {isSimilarSuccess && similarMovies?.items.length !== 0 ? (
+                <Similar
+                    similarMovies={similarMovies?.items}
+                    isSimilarLoading={isSimilarLoading}
+                    isSimilarSuccess={isSimilarSuccess}
+                />
+            ) : null}
         </div>
     );
 };

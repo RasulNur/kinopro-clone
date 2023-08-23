@@ -123,6 +123,9 @@ const NewTicket: FC = () => {
                                         name="attach-file"
                                         id="attach-file"
                                         className="ticket__input-file"
+                                        onChange={(e) =>
+                                            setInputFile(e.target.value)
+                                        }
                                     />
                                     <span>
                                         {inputFile.length === 0

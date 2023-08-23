@@ -6,7 +6,7 @@
     &__card {
         width: max-content;
         margin: 0 auto;
-        border: 2px solid rgba(255, 255, 255, 0.1);
+        border: 2px solid $color9;
         background-color: transparent;
         border-radius: 0.25rem;
         @media (max-width: 530px) {
@@ -19,7 +19,7 @@
         font-size: 14px;
         font-weight: 700;
         text-transform: uppercase;
-        background-color: #d50055;
+        background-color: $color3;
         border-radius: calc(0.25rem - 1px) calc(0.25rem - 1px) 0 0;
         padding: 0.75rem 1.25rem;
     }
@@ -58,7 +58,7 @@
         width: 120px;
         text-align: center;
         position: relative;
-        background-color: #d50055;
+        background-color: $color3;
         border-radius: 5px;
         padding: 25px 10px;
 

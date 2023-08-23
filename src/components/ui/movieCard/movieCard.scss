@@ -7,7 +7,7 @@
 
     &:hover {
         @media (min-width: 993px) {
-            .popular-movie-card__img {
+            .movie-card__img {
                 transform: scale(1.1);
             }
         }
@@ -19,6 +19,7 @@
         user-select: none;
         transition: transform 0.5s ease;
         min-height: 300px;
+        object-fit: cover;
     }
 
     svg {

@@ -11,9 +11,9 @@ import License from "./components/screens/license/License";
 import UserAgreement from "./components/screens/userAgreement/UserAgreement";
 import MoviePage from "./components/screens/moviePage/MoviePage";
 import Panel from "./components/screens/profile/panelPage/Panel";
-import TopUp from "./components/screens/profile/TopUpPage/TopUp";
+import TopUp from "./components/screens/profile/topUpPage/TopUp";
 import Subscriptions from "./components/screens/profile/subsPage/Subscriptions";
-import NewTicket from "./components/screens/profile/Tickets/NewTicket";
+import NewTicket from "./components/screens/profile/tickets/NewTicket";
 
 const Router: FC = () => {
     return (

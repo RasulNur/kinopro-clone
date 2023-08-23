@@ -15,7 +15,7 @@
     &__text-wrapper {
         padding-bottom: 15px;
         margin-bottom: 20px;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        border-bottom: 1px solid $color8;
     }
 
     &__heading {
@@ -50,18 +50,18 @@
         line-height: 40px;
         font-size: 15px;
         background-color: transparent;
-        border: 2px solid rgba(255, 255, 255, 0.1);
+        border: 2px solid $color9;
         position: relative;
         border-radius: 50%;
-        color: #949cb0;
+        color: $color4;
         display: inline-block;
         text-align: center;
         cursor: pointer;
         transition: all 0.5s;
         &:hover {
             @media (min-width: 993px) {
-                background-color: #d50055;
-                color: white;
+                background-color: $color3;
+                color: $color2;
             }
         }
     }
